@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+            color: #000;
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+}
+  
+  html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+html::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #111;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #01AA89;
+  border-radius: 5rem;
+}
+
+ 
+
+        body {
+            background-color: #111111;
+            
+        }
+
+        
+
+        .parent {
+            background-color: #111111;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            height: 100vh;
+        }
+
+        .child {
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            border-radius: 0.6rem;
+            position: relative;
+        }
+
+        .child p{
+            color: black;
+        }
+
+        h1,
+        h2 {
+            margin-top: 1rem;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .item1 {
+            grid-area: 1 / 1 / span 3 / span 2;
+            background-color: #01AA89;
+            /* height: 10px; */
+        }
+
+        .home {
+            margin: 0 auto;
+            border-radius: 1rem;
+            width: 100%;
+            border: 2px solid rgb(41, 39, 36);
+            background: url(https://c0.wallpaperflare.com/preview/919/892/13/seo-search-engine-optimization-marketing-strategy.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            min-height: 30vw;
+            display: flex;
+            box-align: center;
+            align-items: center;
+            box-pack: center;
+            justify-content: center;
+            padding-bottom: 5rem;
+        }
+
+        .box-parent {
+            display: flex;
+            flex-direction: column;
+            /* height: 100%; */
+        }
+
+        .box-child1,
+        .box-child2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .box-child1 h1 {
+            font-size: 2.5vw;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .box-child2 p {
+            font-size: 1vw;
+            text-align: center;
+            margin: 0;
+        }
+
+        .reserved{
+            position: absolute;
+            bottom: 0px;
+        }
+
+        .item2 {
+            background-color: #40D47E;
+        }
+
+        .item3 {
+            background-color: #4AA3DF;
+        }
+
+        .item4  {
+            background-color: #2B26E2;
+        }
+
+        .item4 h2, .item4 p{
+            color: white;
+        }
+
+        .item5 {
+            background-color: #F2CA27;
+        }
+
+        .item6 {
+            background-color: #F35F5D;
+        }
+
+        .item7 {
+            background-color: #FEEACF;
+        }
+
+        .btn-custom {
+            margin-top: 10px;
+            width: 100%;
+            color: #111;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+        }
+
+        /* Specific button color overrides */
+
+        .item2 .btn-custom {
+            background-color: #2ECC71;
+            color: #FFF;
+        }
+
+        .item3 .btn-custom {
+            background-color: #3498DB;
+            color: #333;
+        }
+
+        .item4 .btn-custom {
+            background-color: #1F1CBF;
+            color: #FFF;
+        }
+
+        .item5 .btn-custom {
+            background-color: #e4b90d;
+            color: #333;
+        }
+
+        .item6 .btn-custom {
+            background-color: #E74C3C;
+            color: #000000;
+        }
+
+        .item7 .btn-custom {
+            background-color: #E2C09A;
+            color: #333;
+        }
+
+        .btn:hover,.btn:focus{
+            background-color: black;
+            color: white;
+            transition: 0.5s;
+        }
+
+        /* Responsive adjustments */
+
+        @media (max-width: 1200px) {
+            .parent {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .item1 {
+                grid-area: 1 / 1 / span 2 / span 2;
+            }
+
+            .box-child1 h1 {
+                font-size: 3vw;
+            }
+
+            .box-child2 p {
+                font-size: 2vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .parent {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .item1 {
+                grid-area: 1 / 1 / span 2 / span 2;
+            }
+
+            .box-child1 h1 {
+                font-size: 3vw;
+            }
+
+            .box-child2 p {
+                font-size: 2vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .parent {
+                grid-template-columns: 1fr;
+            }
+
+            .item1 {
+                grid-area: 1 / 1 / span 2 / span 2;
+            }
+
+            .box-child1 h1 {
+                font-size: 4vw;
+                text-align: center;
+            }
+
+            .box-child2 p {
+                font-size: 3vw;
+                text-align: center;
+            }
+        }
+
+        /* Icon styling */
+        .icon {
+            font-size: 3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child item1">
+            <section class="home" id="home">
+            </section>
+            <div class="box-parent">
+                <div class="box-child1">
+                    <h1>I'm Taha, a designer and Webflow developer based in Pakistan</h1>
+                </div>
+                <div class="box-child2">
+                    <p>Passionate about creating visually appealing, user-centered designs and responsive web
+                        solutions.Specializing in building dynamic, high-quality websites that deliver optimal user
+                        experiences..</p>
+                        <p class="reserved">2024 Taha Sultan. All rights reserved.</p>
+                    <!-- <button class="btn btn-custom">Learn More</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="child item2">
+            <div>
+                <div class="icon">💻</div>
+                <h2>Web Development</h2>
+                <p>Specializing in building dynamic, high-quality websites that deliver optimal user experiences.</p>
+                <button class="btn btn-custom">Explore</button>
+            </div>
+        </div>
+        <div class="child item3">
+            <div>
+                <div class="icon">🎨</div>
+                <h2>UI/UX Design</h2>
+                <p>Creating clean, intuitive, and functional interfaces that enhance user engagement.</p>
+                <button class="btn btn-custom">View Portfolio</button>
+            </div>
+        </div>
+        <div class="child item4">
+            <div>
+                <div class="icon">🚀</div>
+                <h2>Project Management</h2>
+                <p>Efficiently managing projects to ensure timely delivery of quality digital products.</p>
+                <button class="btn btn-custom">Learn More</button>
+            </div>
+        </div>
+        <div class="child item5">
+            <div>
+                <div class="icon">📈</div>
+                <h2>SEO Optimization</h2>
+                <p>Boosting visibility with SEO strategies that drive traffic and improve search rankings.</p>
+                <button class="btn btn-custom">Discover</button>
+            </div>
+        </div>
+        <div class="child item6">
+            <div>
+                <div class="icon">⚙️</div>
+                <h2>API Integration</h2>
+                <p>Seamless integration of APIs to add advanced functionality to websites and applications.</p>
+                <button class="btn btn-custom">Learn More</button>
+            </div>
+        </div>
+        <div class="child item7">
+            <div>
+                <div class="icon">📱</div>
+                <h2>Responsive Design</h2>
+                <p>Ensuring websites look and function flawlessly on any device, from desktops to mobile.</p>
+                <button class="btn btn-custom">View Work</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
