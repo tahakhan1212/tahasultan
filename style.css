@@ -1,0 +1,27 @@
+body {
+  background-color: lightgrey; 
+}
+
+.card-header {
+  transition: background-color 0.3s; 
+}
+
+.card-header:hover {
+  background-color: rgba(
+    204,
+    153,
+    0,
+    0.8
+  ); 
+}
+
+.btn-link {
+  color: rgb(82, 82, 82); 
+  text-decoration: none; 
+}
+
+.btn-link:focus,
+.btn-link:hover {
+  text-decoration: none; 
+  color: blue; 
+}
